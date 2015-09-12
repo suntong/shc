@@ -1,5 +1,12 @@
 CHANGES
 
+3.8.9b	Fri, 4 Jan 2013 12:10:42 +0100 (CET)
+
+	Lee Chisnall <lee@dnuk.com>
+	- To work as daemon.  
+
+
+
 3.8.9	Wed Apr 25 09:24:25 CEST 2012
 
 	Thanks to Giacomo Picconi <giacomo.picconi@gpstudio.com> for:

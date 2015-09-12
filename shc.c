@@ -14,9 +14,9 @@
  */
 
 static const char my_name[] = "shc";
-static const char version[] = "Version 3.8.9";
+static const char version[] = "Version 3.8.9b";
 static const char subject[] = "Generic Script Compiler";
-static const char cpright[] = "Copyright (c) 1994-2012";
+static const char cpright[] = "Copyright (c) 1994-2015";
 static const struct { const char * f, * s, * e; }
 	author = { "Francisco", "Rosales", "<frosal@fi.upm.es>" };
 
@@ -323,8 +323,7 @@ static const char * RTC[] = {
 "	char * scrpt;",
 "	int ret, i, j;",
 "	char ** varg;",
-"	char * me = getenv(\"_\");",
-"	if (me == NULL) { me = argv[0]; }",
+"	char * me = argv[0];",
 "",
 "	stte_0();",
 "	 key(pswd, pswd_z);",

@@ -23,6 +23,8 @@ CFLAGS = -Wall # -O6 -pedantic
 
 #SHELL = /bin/sh
 
+SHCFLAGS = -v -T # Add -T option to allow binary to be traceable
+
 all: shc ask_for_test
 
 shc: shc.c
@@ -41,7 +43,7 @@ make_the_test: match.x
 
 match.x: shc match
 	@echo '***	Compiling script "match"'
-	CFLAGS="$(CFLAGS)" ./shc -v -f match
+	CFLAGS="$(CFLAGS)" ./shc $(SHCFLAGS) -f match
 
 ask_for_strings:
 	@echo '***	¿Do you want to see strings in the generated binary?'
@@ -62,7 +64,7 @@ expiration: til_yesterday ask_for_install
 
 til_yesterday: shc match
 	@echo '***	Compiling "match" to expired date'
-	CFLAGS="$(CFLAGS)" ./shc -vvv -e `date "+%d/%m/%Y"` -f match
+	CFLAGS="$(CFLAGS)" ./shc $(SHCFLAGS) -vv -e `date "+%d/%m/%Y"` -f match
 	@echo '***	Running a compiled test script!'
 	@echo '***	It must fail showing "./match.x: has expired!"'
 	./match.x
